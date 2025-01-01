@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +10,7 @@ using SchoolManagement.MVC.Data;
 
 namespace SchoolManagement.MVC.Controllers
 {
+    [Authorize]
     public class CoursesController : Controller
     {
         private readonly SchoolManagementDbContext _context; //  stores this dependency for use in methods.
@@ -43,6 +45,7 @@ namespace SchoolManagement.MVC.Controllers
         }
 
         // GET: Courses/Create
+        
         public IActionResult Create()
         {
             return View();
