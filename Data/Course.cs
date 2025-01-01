@@ -12,4 +12,6 @@ public partial class Course
     public string? Code { get; set; }
 
     public int? Credits { get; set; }
+
+    public virtual ICollection<ClassesDatum> ClassesData { get; set; } = new List<ClassesDatum>();
 }
